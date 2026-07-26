@@ -1,3 +1,4 @@
 .idea/
 output_llm/
 *.zip
+*.xpi

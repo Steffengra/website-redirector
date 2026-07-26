@@ -63,6 +63,8 @@ def create_extension():
     _create_extension_file()
     _update_updates_manifest()
 
+    print(f"--------------REMINDER--------------\nUpdate the new .xpi file to github as a release with the correct tag: {current_version}")
+
 
 if __name__ == "__main__":
     create_extension()

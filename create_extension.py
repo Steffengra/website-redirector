@@ -4,6 +4,9 @@ from hashlib import sha256
 from pathlib import Path
 
 
+APP_UUID = "{ec00d5a7-84dc-4539-80c0-7fb4cf9d37c4}"
+
+
 def create_extension():
 
     def _get_current_version():
@@ -21,7 +24,7 @@ def create_extension():
 
         if current_version in [
             update["version"]
-            for update in updates_manifest["addons"]["{ec00d5a7-84dc-4539-80c0-7fb4cf9d37c4}"]["updates"]
+            for update in updates_manifest["addons"][APP_UUID]["updates"]
         ]:
             raise PermissionError("Extension with this version number already exists. Update version number in manifest.json.")
 
@@ -31,14 +34,14 @@ def create_extension():
                 _zipf.write(_file)
 
     def _update_updates_manifest():
-        _past_updates = updates_manifest["addons"]["{ec00d5a7-84dc-4539-80c0-7fb4cf9d37c4}"]["updates"]
+        _past_updates = updates_manifest["addons"][APP_UUID]["updates"]
         _extension_file_hash = sha256(extension_file_path.read_bytes())
         current_update = {
             "version": current_version,
             "update_link": f"https://github.com/Steffengra/website-redirector/releases/download/{current_version}/{extension_file_name}",
             "update_hash": f"sha256:{_extension_file_hash.hexdigest()}",
         }
-        updates_manifest["addons"]["{ec00d5a7-84dc-4539-80c0-7fb4cf9d37c4}"]["updates"] = _past_updates + [current_update]
+        updates_manifest["addons"][APP_UUID]["updates"] = _past_updates + [current_update]
         with open(updates_manifest_file_name, "w", encoding="utf-8") as _file:
             json.dump(obj=updates_manifest, fp=_file, indent=5)
 

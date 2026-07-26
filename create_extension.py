@@ -35,6 +35,7 @@ def create_extension():
         _extension_file_hash = sha256(extension_file_path.read_bytes())
         current_update = {
             "version": current_version,
+            "update_link": f"https://github.com/Steffengra/website-redirector/releases/download/{current_version}/{extension_file_name}",
             "update_hash": f"sha256:{_extension_file_hash.hexdigest()}",
         }
         updates_manifest["addons"]["{ec00d5a7-84dc-4539-80c0-7fb4cf9d37c4}"]["updates"] = _past_updates + [current_update]

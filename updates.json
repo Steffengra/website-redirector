@@ -1,8 +1,12 @@
 {
-  "addons": {
-    "{ec00d5a7-84dc-4539-80c0-7fb4cf9d37c4}": {
-      "updates": [
-      ]
-    }
-  }
+     "addons": {
+          "{ec00d5a7-84dc-4539-80c0-7fb4cf9d37c4}": {
+               "updates": [
+                    {
+                         "version": "1.0.0",
+                         "update_hash": "sha256:62b62380f405547367ea627c6877039b410a74168359be5fde2c01cd03b5b2ef"
+                    }
+               ]
+          }
+     }
 }

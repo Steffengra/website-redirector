@@ -6,6 +6,11 @@
                          "version": "1.0.0",
                          "update_link": "https://github.com/Steffengra/website-redirector/releases/download/1.0.0/website-redirector-1.0.0.xpi",
                          "update_hash": "sha256:62b62380f405547367ea627c6877039b410a74168359be5fde2c01cd03b5b2ef"
+                    },
+                    {
+                         "version": "1.0.1",
+                         "update_link": "https://github.com/Steffengra/website-redirector/releases/download/1.0.1/website-redirector-1.0.1.xpi",
+                         "update_hash": "sha256:bd47179a3c1401237d1645584565ddef100e301413090291af4137375198b455"
                     }
                ]
           }

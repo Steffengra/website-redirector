@@ -42,7 +42,6 @@ def create_extension():
             json.dump(obj=updates_manifest, fp=_file, indent=5)
 
 
-
     extension_manifest_file_name = "manifest.json"
     updates_manifest_file_name = "updates.json"
 
